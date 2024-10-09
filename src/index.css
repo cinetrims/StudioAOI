@@ -1,6 +1,75 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap');
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+/* For handling gaps in masonry layout */
+.masonry-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* 3 columns */
+  grid-auto-rows: 10px; /* Adjust to control row height */
+  gap: 20px; /* Gap between the items */
+}
+
+.masonry-grid-item {
+  grid-row-end: span 30; /* Default row span for items */
+}
+
+.masonry-grid-item.large {
+  grid-row-end: span 60; /* Larger row span for bigger items */
+}
+
+.custom-curve {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  clip-path: polygon(0% 0%, 60% 0%, 60% 27%, 80% 27%, 80% 60%, 100% 60%, 100% 100%, 0% 100%);
+  border-radius: 0 40px 40px 0; /* Adds rounded corners to the right side */
+}
+
+
+@font-face {
+    font-family: 'Clash Display';
+    src: url('assets/Fonts/ClashDisplay-Bold.otf') format('otf');
+    font-weight: 700;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'Clash Display';
+    src: url('assets/Fonts/ClashDisplay-Extralight.otf') format('otf');
+    font-weight: 200;
+    font-style:normal;
+  }
+
+  @font-face {
+    font-family: 'Clash Display';
+    src: url('assets/Fonts/ClashDisplay-Light.otf') format('opentype');
+    font-weight: 300;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'Clash Display';
+    src: url('assets/Fonts/ClashDisplay-Medium.otf') format('opentype');
+    font-weight: 500;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'Clash Display';
+    src: url('assets/Fonts/ClashDisplay-Regular.otf') format('opentype');
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'Clash Display';
+    src: url('assets/Fonts/ClashDisplay-Semibold.otf') format('opentype');
+    font-weight: 600;
+    font-style: normal;
+  }
+
+  
+
+  @tailwind base;
+  @tailwind components;
+  @tailwind utilities;
+  

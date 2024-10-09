@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Waterfall Cut-Out Effect</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <style>
+        .cut-out {
+            position: relative;
+            background-color: white; /* White background */
+            padding: 50px; /* Padding for content */
+            margin: 20px; /* Space around the div */
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%, 0 50%, 50% 50%); /* Waterfall polygon shape */
+        }
+
+        .cut-out::before {
+            content: '';
+            position: absolute;
+            top: 0; /* Position at the top */
+            left: 0; /* Position at the left */
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            background-color: white; /* Background color matches main div */
+            z-index: -1; /* Behind the content */
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%, 0 50%, 50% 50%); /* Same waterfall polygon shape */
+        }
+    </style>
+</head>
+<body class="bg-gray-200 flex justify-center items-center min-h-screen">
+
+    <div class="cut-out">
+        <h1 class="text-2xl font-bold">Waterfall Cut-Out Effect</h1>
+        <p>This is a div with a waterfall cut-out effect.</p>
+    </div>
+
+</body>
+</html>

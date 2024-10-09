@@ -7,18 +7,17 @@ export default {
   theme: {
     extend: {
       fontFamily: {
+        clash: ['Clash Display','sans-serif'],
         sans: ['Roboto', 'sans-serif'],
         nunito: ['Nunito'],
         kanit: ['Kanit'],
-        clashdisplay:['clashdisplayvariable']
+        figtree: ['Figtree'],
+        
 
       },
       gridTemplateColumns:
       {
         '70/30':'70% 28%' ,
-      },
-      colors:{
-        customGreen:'#191D1D',
       },
     },
   },
