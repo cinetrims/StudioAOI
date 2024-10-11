@@ -1,14 +1,21 @@
 import React from 'react';
 import arrow from "../assets/images/arrow2.png"; // Importing the arrow image
+import gallery1 from "../assets/images/gallery1.png";
+import gallery2 from "../assets/images/gallery2.jpg";
+import gallery3 from '../assets/images/gallery3.jpg';
+import gallery4 from '../assets/images/gallery4.jpg';
+import gallery5 from '../assets/images/gallery5.jpg';
+import gallery6 from '../assets/images/gallery6.jpg';
+
 
 const Gallery = () => {
   const imageList = [
-    { id: 1, title: 'Kanakamala', imgSrc: 'src/assets/images/gallery1.png' },
-    { id: 2, title: 'Kanakamala', imgSrc: 'src/assets/images/gallery2.jpg' },
-    { id: 3, title: 'Kanakamala', imgSrc: 'src/assets/images/gallery3.jpg' },
-    { id: 4, title: 'Kanakamala', imgSrc: 'src/assets/images/gallery4.jpg' },
-    { id: 5, title: 'Kanakamala', imgSrc: 'src/assets/images/gallery6.jpg' },
-    { id: 6, title: 'Kanakamala', imgSrc: 'src/assets/images/gallery5.jpg' }, 
+    { id: 1, title: 'Kanakamala', imgSrc: gallery1 },
+    { id: 2, title: 'Kanakamala', imgSrc: gallery2 },
+    { id: 3, title: 'Kanakamala', imgSrc: gallery3 },
+    { id: 4, title: 'Kanakamala', imgSrc: gallery4 },
+    { id: 5, title: 'Kanakamala', imgSrc: gallery6 },
+    { id: 6, title: 'Kanakamala', imgSrc: gallery5 }, 
   ];
 
   const divideIntoGroups = (array, groupSize) => {
