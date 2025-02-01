@@ -1,10 +1,10 @@
-import React from 'react'
-import Navbar from './components/Navbar'
-import Hero from './components/Hero'
-import About from './components/About'
-import Aboutus from './components/Aboutus'
-import Gallery from './components/Gallery'
-import Contact from './components/Contact'
+import React from 'react';
+import Navbar from './sections/Navbar';
+import Hero from './sections/Hero';
+import About from './sections/About';
+import Aboutus from './sections/Aboutus';
+import Gallery from './sections/Gallery';
+import Footer from './sections/Footer';
 
 const App = () => {
   return (
@@ -14,9 +14,9 @@ const App = () => {
       <About />
       <Aboutus />
       <Gallery />
-      <Contact />
+      <Footer />
     </div>
-  )
-}
+  );
+};
 
-export default App
+export default App;

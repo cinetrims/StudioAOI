@@ -1,35 +1,27 @@
-import React from 'react'
-import CountUp from 'react-countup'
-import pic1 from "../assets/images/modern.png"
-import furniture from "../assets/images/furniture.png"
-import arrow from "../assets/images/arrow.png"
+import React from 'react';
+import CountUp from 'react-countup';
+import pic1 from '../assets/images/modern.png';
+import furniture from '../assets/images/furniture.png';
+import arrow from '../assets/images/arrow.png';
+import SectionLayout from '../components/sectionLayout';
 
 const About = () => {
   return (
-    <div>
-      <div className="flex  justify-between mx-12 mt-20">
-        {/* Left side: Large image (3/4 of the screen) */}
-        <div className="relative w-3/4 h-[575px]">
-          {/* Image */}
-          <img
-            src={pic1}
-            alt="Large Image"
-            className="w-full h-full object-cover rounded-xl"
-          />
-
-          <div className="absolute bottom-1 bg-white p-6 rounded- custom-curve">
-            {/* "Gorgeous Interior" Text */}
-            <div className="border-1 inline-block bg-white left-0 font-clash font-medium text-black py-1 px-2 rounded-full border-2 border-black text-sm">
-              Gorgeous Interior
+    <SectionLayout>
+      <div className="flex  justify-between mt-20">
+        <div className="relative w-3/4 h-[575px] rounded-2xl overflow-clip">
+          <img src={pic1} alt="Large Image" className="object-cover size-full" />
+          <div className="absolute bottom-0">
+            <div className="bg-white w-fit py-5 pr-5 rounded-tr-3xl">
+              <div className="border-1 inline-block bg-white left-0 font-clash font-medium text-black py-1 px-2 rounded-full border-2 border-black text-sm ">
+                Gorgeous Interior
+              </div>
             </div>
-
-            {/* "Modern Minimalist" Text */}
-            <div className="font-clash text-black font-medium text-[62px] leading-tight">
+            <div className="bg-white w-fit font-clash text-black font-medium text-[62px] leading-tight pr-5 rounded-tr-3xl">
               Modern <br /> Minimalist
             </div>
           </div>
         </div>
-
 
         <div className="flex flex-col justify-between ml-8 w-1/3 min-w-32">
           {/* Box 1 */}
@@ -39,10 +31,13 @@ const About = () => {
                 Aesthetic
               </span>
               <p className="text-black font-clash font-normal text-sm max-lg:text-xs">
-                Aesthetic design where every<br />pieces tells a story of style
+                Aesthetic design where every
+                <br />
+                pieces tells a story of style
               </p>
               <h2 className="text-black font-medium text-2xl mt-2 max-lg:text-xl">
-                Into a gallery of <br />elegance
+                Into a gallery of <br />
+                elegance
               </h2>
             </div>
           </div>
@@ -51,17 +46,16 @@ const About = () => {
           <div className="relative h-[340px] mt-8 rounded-2xl overflow-hidden ">
             {/* Background image */}
 
-            <img
-              src={furniture}
-              alt="Furniture"
-              className="w-full h-full object-cover"
-            />
+            <img src={furniture} alt="Furniture" className="w-full h-full object-cover" />
             <div className="absolute inset-0 bg-gray-800 bg-opacity-20"></div>
             {/* Overlay text */}
             <div className="absolute top-4 left-4">
-              <span className="text-sm text-white font-clash rounded-full border-2 border-white px-3 py-1">Furniture</span>
+              <span className="text-sm text-white font-clash rounded-full border-2 border-white px-3 py-1">
+                Furniture
+              </span>
               <p className="mt-5 text-lg font-light font-clash text-white leading-tight">
-                Indulge in the artistry of <br />everyday living
+                Indulge in the artistry of <br />
+                everyday living
               </p>
             </div>
 
@@ -75,7 +69,6 @@ const About = () => {
               </button>
               <div className="w-24 h-24 max-lg:h-16 max-lg:w-16 rounded-full bg-white"></div>
             </div>
-
           </div>
         </div>
       </div>
@@ -100,8 +93,8 @@ const About = () => {
           <p className="text-[#727272] mt-2 text-lg">satisfied Customers</p>
         </div>
       </div>
-    </div>
-  )
-}
+    </SectionLayout>
+  );
+};
 
-export default About
+export default About;
