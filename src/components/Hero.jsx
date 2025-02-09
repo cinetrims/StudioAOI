@@ -97,7 +97,7 @@ const Hero = () => {
 
             {/* Pause Button */}
             {isVideoPlaying && (
-                <div className="absolute bottom-[68px] right-[67px] z-50 p-[10px]">
+                <div className="absolute bottom-[58px] right-[58px] z-50 p-[10px]">
                     <button
                         onClick={handlePauseClick}
                         className="bg-white/20 backdrop-blur-lg hover:bg-white/30 text-white rounded-full p-4 transition-all duration-300"
