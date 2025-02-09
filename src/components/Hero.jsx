@@ -2,20 +2,25 @@ import React, { useState } from 'react';
 import hero from "../assets/images/Hero.png";
 import thumbnail from "../assets/images/modern.png";
 import video from "../assets/images/video1.mp4";
+import CircularText from './CircularText';
 
 const Hero = () => {
     const [isVideoPlaying, setIsVideoPlaying] = useState(false);
+    const videoRef = React.useRef(null);
   
     const handlePlayClick = () => {
         setIsVideoPlaying(true);
     };
 
     const handlePauseClick = () => {
-        setIsVideoPlaying(false); // Pause the video and return to the hero image
+        if (videoRef.current) {
+            videoRef.current.pause();
+        }
+        setIsVideoPlaying(false);
     };
 
     return (
-        <div className="mx-12  relative h-[70vh] md:h-[85vh] flex items-center justify-start">
+        <div className="mx-6 md:mx-12 relative h-[70vh] md:h-[85vh] flex items-center justify-start">
             {/* Hero Image or Video */}
             {!isVideoPlaying ? (
                 <img
@@ -25,6 +30,7 @@ const Hero = () => {
                 />
             ) : (
                 <video
+                    ref={videoRef}
                     className="absolute rounded-2xl top-0 w-full h-full object-cover"
                     autoPlay
                     muted
@@ -37,53 +43,89 @@ const Hero = () => {
 
             <div className="absolute inset-0 bg-opacity-20"></div>
 
-            {/* Text Section */}
-            <div className="relative text-white z-10">
-                <h1 className="font-clash font-bold text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-5 mt-24 mx-8 md:mt-36">
+            {/* Main Title */}
+            <div className="relative text-white z-10 w-full">
+                <h1 className="font-clash font-bold text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-5 mt-8 md:mt-24 text-center px-4">
                     We design your dreams
                 </h1>
+            </div>
 
-                <div className="flex flex-col md:flex-row  mt-8 md:mt-12 space-y-8 md:space-y-0 md:space-x-8">
-                    <div className="bg-white bg-opacity-20 backdrop-blur-lg mx-8 p-4 rounded-2xl w-[350px] max-lg:w-[280px]">
-                        <p className="text-white-800 font-clashdisplay text-sm max-lg:text-xs mb-3">
-                            Discover a symphony of form and function, where innovative design meets timeless elegance. Our architecture studio crafts spaces that not only captivate the eye but also enrich the soul.
-                        </p>
-                        <button className="max-lg:text-xs bg-black text-white py-2 px-4 rounded-full flex items-center hover:bg-gray-800 transition duration-300">
-                            View More → 
-                        </button>
-                    </div>
-
-                    {!isVideoPlaying && (
-                        <div
-                            className="relative bg-white bg-opacity-20 backdrop-blur-md p-3 rounded-2xl w-full md:w-[250px]  flex items-center justify-center"
-                            onClick={handlePlayClick}
-                        >
-                            <img
-                                src={thumbnail}
-                                alt="Video Thumbnail"
-                                className="rounded-2xl object-cover w-full h-full"
-                            />
-                            <div className="absolute inset-0 flex items-center justify-center">
-                                <button className="backdrop-blur-md bg-opacity-50 rounded-full p-3 px-4 text-white text-2xl opacity-100 hover:opacity-100 transition-opacity">
-                                    ▶
-                                </button>
-                            </div>
-                        </div>
-                    )}
+            {/* Bottom Left Content */}
+            <div className="absolute bottom-8 left-0 md:left-8 z-10 flex flex-col md:flex-row gap-8 w-full md:w-auto">
+                {/* Text Card */}
+                <div className="bg-white bg-opacity-20 backdrop-blur-lg p-6 rounded-2xl w-[90%] md:w-[400px] h-[180px] max-lg:w-[320px] mx-auto">
+                    <p className="text-white font-clashdisplay text-base max-lg:text-sm mb-4 line-clamp-3">
+                        Discover a symphony of form and function, where innovative design meets timeless elegance. Our architecture studio crafts spaces that not only captivate the eye but also enrich the soul.
+                    </p>
+                    <button className="text-sm bg-black text-white py-2.5 px-5 rounded-full flex items-center hover:bg-gray-800 transition duration-300">
+                        View More → 
+                    </button>
                 </div>
+
+                {/* Video Thumbnail - Hidden on mobile */}
+                {!isVideoPlaying && (
+                    <div
+                        className="relative bg-white bg-opacity-20 backdrop-blur-md p-3 rounded-2xl w-[300px] h-[180px] hidden md:flex items-center justify-center"
+                        onClick={handlePlayClick}
+                    >
+                        <img
+                            src={thumbnail}
+                            alt="Video Thumbnail"
+                            className="rounded-2xl object-cover w-full h-full"
+                        />
+                        <div className="absolute inset-0 flex items-center justify-center">
+                            <button className="bg-white/20 backdrop-blur-lg hover:bg-white/30 text-white rounded-full p-4 transition-all duration-300">
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="24"
+                                    height="24"
+                                    viewBox="0 0 24 24"
+                                    strokeWidth="2"
+                                    stroke="currentColor"
+                                    fill="none"
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                >
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                                    <path d="M6 4v16a1 1 0 0 0 1.524 .852l13 -8a1 1 0 0 0 0 -1.704l-13 -8a1 1 0 0 0 -1.524 .852z" stroke="none" fill="currentColor"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                )}
             </div>
 
             {/* Pause Button */}
             {isVideoPlaying && (
-                <div className="absolute flex items-center justify-center right-5 md:right-20 lg:right-40 bottom-10">
+                <div className="absolute bottom-[68px] right-[67px] z-50 p-[10px]">
                     <button
-                        className="place-content-center bg-white text-black rounded-full p-4 opacity-50 hover:opacity-70 transition-opacity"
                         onClick={handlePauseClick}
+                        className="bg-white/20 backdrop-blur-lg hover:bg-white/30 text-white rounded-full p-4 transition-all duration-300"
+                        aria-label="Pause video"
                     >
-                        ▐▐
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                            strokeWidth="2"
+                            stroke="currentColor"
+                            fill="none"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                        >
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                            <path d="M9 4h-2a2 2 0 0 0 -2 2v12a2 2 0 0 0 2 2h2a2 2 0 0 0 2 -2v-12a2 2 0 0 0 -2 -2z" stroke="none" fill="currentColor"/>
+                            <path d="M17 4h-2a2 2 0 0 0 -2 2v12a2 2 0 0 0 2 2h2a2 2 0 0 0 2 -2v-12a2 2 0 0 0 -2 -2z" stroke="none" fill="currentColor"/>
+                        </svg>
                     </button>
                 </div>
             )}
+
+            {/* Circular Text */}
+            <div className="absolute bottom-8 right-8 z-10 hidden md:block">
+                <CircularText />
+            </div>
         </div>
     );
 };

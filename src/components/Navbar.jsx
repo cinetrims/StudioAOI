@@ -5,9 +5,9 @@ const Navbar = () => {
   return (
     <nav className="bg-white 
     ">
-      <div className="container mx-auto px-4 py-4 flex justify-between items-center">
+      <div className="w-full px-14 py-4 flex justify-between items-center">
         <div className="text-2xl font-kanit font-medium text-gray-800 tracking-widest">
-          STUDIO.AIO
+          STUDIO.AOI
         </div>
         <div className="space-x-6 font-clash max-md:hidden">
           <a href="#" className="text-gray-600 hover:text-gray-900">

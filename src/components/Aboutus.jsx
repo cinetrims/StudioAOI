@@ -4,7 +4,7 @@ import about1 from "../assets/images/about1.png"
 const Aboutus = () => {
   return (
     <div>
-    <div className="flex flex-col lg:flex-row items-center justify-center lg:space-x-6 pt-20 mx-12">
+    <div className="flex flex-col lg:flex-row items-center justify-center lg:space-x-6 pt-8 mx-12">
     {/* Left Image Section */}
     <div className="lg:w-3/5 w-full">
       <img

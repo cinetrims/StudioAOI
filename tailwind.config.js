@@ -12,12 +12,13 @@ export default {
         nunito: ['Nunito'],
         kanit: ['Kanit'],
         figtree: ['Figtree'],
-        
-
       },
       gridTemplateColumns:
       {
         '70/30':'70% 28%' ,
+      },
+      animation: {
+        'spin-slow': 'spin 20s linear infinite',
       },
     },
   },
